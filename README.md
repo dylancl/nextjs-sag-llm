@@ -2,7 +2,23 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Llama.cpp
+
+First, start a server for the LLM:
+
+```bash
+./server -m models/Hermes-2-Pro-Mistral-7B.Q4_K_S.gguf -c 12000
+```
+
+Then, start a server for the embedding model (on a different port, in this case `8081`):
+
+```bash
+./server -m models/nomic-embed-text-v1.Q5_K_S.gguf -c 8192 --embedding --port 8081
+```
+
+### Next.js
+
+Run the development server:
 
 ```bash
 npm run dev
